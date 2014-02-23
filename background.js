@@ -1,6 +1,3 @@
-function getBgColors (tab) {
-	alert('the browser action was clicked1 yey!');
-}
 
 // Called when the url of a tab changes.
 function checkForValidUrl(tabId, changeInfo, tab) {
