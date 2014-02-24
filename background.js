@@ -10,6 +10,7 @@ function checkForValidUrl(tabId, changeInfo, tab) {
   		if (tabs[0].url.indexOf('timetoknow') > -1) {
 		    // ... show the page action.
 		    chrome.pageAction.show(tabId);
+        chrome.runtime.sendMessage({a:'b'});
   		}
   });
   
