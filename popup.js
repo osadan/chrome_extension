@@ -29,7 +29,12 @@ window.addEventListener("DOMContentLoaded", function() {
         	/* ...and send a request for the DOM info... */
         	chrome.tabs.sendMessage(
                 tabs[0].id,
-                data);
+                data,
+                function (){
+					//alert('callback');
+					//console.log('callback');
+					window.close();
+				});
     	});
 
 
