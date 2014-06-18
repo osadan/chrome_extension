@@ -4,6 +4,8 @@ window.addEventListener("DOMContentLoaded", function() {
 	var name = document.getElementById('name');
 	var password = document.getElementById('password');
 	var playerDir = document.getElementById('playerDir');
+	var playerDir = document.getElementById('mainDir');
+	var playerDir = document.getElementById('data');
 
 	if(localStorage['name']){
 		name.value = localStorage['name'];
@@ -17,6 +19,14 @@ window.addEventListener("DOMContentLoaded", function() {
 		playerDir.value = localStorage['playerDir'];
 	}
 
+	if(localStorage['mainDir']){
+		mainDir.value = localStorage['mainDir'];
+	}
+
+	if(localStorage['data']){
+		data.value = localStorage['data'];
+	}
+
 	button.addEventListener('click',function(){
 		//alert('click');
 		//console.log('click');
@@ -25,10 +35,14 @@ window.addEventListener("DOMContentLoaded", function() {
 		data.name = document.getElementById('name').value;
 		data.password = document.getElementById('password').value;
 		data.playerDir = document.getElementById("playerDir").value;
+		data.mainDir = document.getElementById('mainDir').value;
+		data.data = document.getElementById('data').value;
 
 		localStorage['name'] = data.name;
 		localStorage['password'] = data.password;
 		localStorage['playerDir'] = data.playerDir;
+		localStorage['mainDir'] = data.mainDir;
+		localStorage['data'] = data.data;
 		
 		chrome.tabs.query({
         	active: true,
